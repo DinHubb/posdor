@@ -142,6 +142,7 @@ function choosePackage(id: PackageId) {
       <UAccordion
         :items="faq"
         type="multiple"
+        :ui="{ trigger: 'text-base font-semibold py-5', body: 'text-base text-muted pb-5' }"
       />
     </UPageSection>
 
