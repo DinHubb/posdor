@@ -188,10 +188,6 @@ const footerColumns = computed(() => [
           {{ t('footer.copyright', { year: new Date().getFullYear() }) }}
         </p>
       </template>
-
-      <template #right>
-        <UColorModeButton />
-      </template>
     </UFooter>
   </UApp>
 </template>
