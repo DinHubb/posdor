@@ -147,7 +147,7 @@ function back() {
 
 <template>
   <UContainer class="pb-16">
-    <UPage>
+    <UPage :ui="{ center: 'lg:col-span-7', right: 'lg:col-span-3' }">
       <UPageHeader
         :headline="t('order.headline')"
         :title="t('order.title')"
