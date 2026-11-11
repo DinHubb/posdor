@@ -71,12 +71,18 @@ const footerColumns = computed(() => [
 
 <template>
   <UApp :locale="uiLocale">
-    <UHeader :to="localePath('/')">
+    <UHeader
+      :to="localePath('/')"
+      :ui="{ left: 'lg:flex-none', center: 'lg:flex-1 lg:ms-6', right: 'lg:flex-none' }"
+    >
       <template #title>
         <AppLogo />
       </template>
 
-      <UNavigationMenu :items="nav" />
+      <UNavigationMenu
+        :items="nav"
+        variant="link"
+      />
 
       <template #right>
         <UDropdownMenu
@@ -113,6 +119,7 @@ const footerColumns = computed(() => [
         <UNavigationMenu
           :items="nav"
           orientation="vertical"
+          variant="link"
           class="-mx-2.5"
         />
 
