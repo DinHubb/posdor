@@ -25,7 +25,9 @@ useSeoMeta({
 
 const uiLocale = computed(() => locale.value === 'tg' ? uiLocales.tg : uiLocales.ru)
 
-const isActive = (path: string) => route.path.startsWith(localePath(path))
+// Сравниваем по префиксу пути: localePath('/status') дал бы warn, т.к. есть только /status/[id]
+const localePrefix = computed(() => localePath('/').replace(/\/$/, ''))
+const isActive = (path: string) => route.path.startsWith(`${localePrefix.value}${path}`)
 
 const nav = computed<NavigationMenuItem[]>(() => [
   { label: t('nav.packages'), to: localePath({ path: '/', hash: '#packages' }), active: false },

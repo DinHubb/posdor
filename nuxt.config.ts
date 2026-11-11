@@ -50,6 +50,8 @@ export default defineNuxtConfig({
   },
 
   i18n: {
+    // Полный адрес сайта для hreflang; на GitHub Pages переопределяется NUXT_PUBLIC_I18N_BASE_URL в workflow
+    baseUrl: 'http://localhost:3000',
     defaultLocale: 'ru',
     strategy: 'prefix_except_default',
     locales: [
