@@ -11,7 +11,7 @@ const sent = ref(false)
 </script>
 
 <template>
-  <UContainer class="max-w-2xl pb-28 lg:pb-16">
+  <UContainer class="max-w-2xl pb-16">
     <UPageHeader
       :headline="t('rate.headline', { id: route.params.id })"
       :title="t('rate.title')"

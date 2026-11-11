@@ -19,7 +19,7 @@ const payments = computed(() => paymentTexts.value.map((p, i) => ({ ...p, icon: 
 </script>
 
 <template>
-  <UContainer class="pb-28 lg:pb-16">
+  <UContainer class="pb-16">
     <UPageHero
       :headline="t('done.headline', { id })"
       :title="t('done.title')"

@@ -25,7 +25,7 @@ const sadaqa = computed(() => toFeatures(sadaqaItems))
 </script>
 
 <template>
-  <div class="pb-24 lg:pb-0">
+  <div>
     <UPageHero
       :headline="t('services.headline')"
       :title="t('services.title')"

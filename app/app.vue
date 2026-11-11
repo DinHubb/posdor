@@ -67,8 +67,6 @@ const footerColumns = computed(() => [
     }))
   }
 ])
-
-const showMobileBar = computed(() => !isActive('/order'))
 </script>
 
 <template>
@@ -102,7 +100,6 @@ const showMobileBar = computed(() => !isActive('/order'))
           :label="contacts.shortPhone"
           color="neutral"
           variant="outline"
-          class="hidden sm:inline-flex"
         />
 
         <UButton
@@ -146,7 +143,7 @@ const showMobileBar = computed(() => !isActive('/order'))
 
     <USeparator />
 
-    <UFooter :class="showMobileBar ? 'pb-24 lg:pb-0' : ''">
+    <UFooter>
       <template #top>
         <UContainer>
           <UFooterColumns :columns="footerColumns">
@@ -196,7 +193,5 @@ const showMobileBar = computed(() => !isActive('/order'))
         <UColorModeButton />
       </template>
     </UFooter>
-
-    <AppMobileBar v-if="showMobileBar" />
   </UApp>
 </template>

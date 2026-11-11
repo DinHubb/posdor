@@ -9,7 +9,7 @@ useSeoMeta({ title: () => t('knowledge.metaTitle') })
 </script>
 
 <template>
-  <UContainer class="pb-28 lg:pb-16">
+  <UContainer class="pb-16">
     <UPageHeader
       :headline="t('knowledge.headline')"
       :title="t('knowledge.title')"

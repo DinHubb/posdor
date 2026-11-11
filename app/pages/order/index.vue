@@ -146,7 +146,7 @@ function back() {
 </script>
 
 <template>
-  <UContainer class="pb-40 lg:pb-16">
+  <UContainer class="pb-16">
     <UPage>
       <UPageHeader
         :headline="t('order.headline')"
@@ -553,32 +553,5 @@ function back() {
         </UPageAside>
       </template>
     </UPage>
-
-    <UCard
-      class="fixed inset-x-0 bottom-0 z-50 rounded-none lg:hidden"
-      :ui="{ body: 'p-3 sm:p-3 flex items-center gap-3' }"
-    >
-      <UPageFeature
-        :title="t('order.total')"
-        :description="price(total)"
-        :ui="{ description: 'text-lg font-semibold text-highlighted' }"
-        class="flex-1"
-      />
-      <UButton
-        :to="contacts.phoneHref"
-        icon="i-lucide-phone"
-        :aria-label="t('common.call')"
-        color="neutral"
-        variant="outline"
-        size="xl"
-      />
-      <UButton
-        :label="isLast ? t('common.send') : t('common.next')"
-        :trailing-icon="isLast ? 'i-lucide-send' : 'i-lucide-arrow-right'"
-        :disabled="!canNext"
-        size="xl"
-        @click="next"
-      />
-    </UCard>
   </UContainer>
 </template>

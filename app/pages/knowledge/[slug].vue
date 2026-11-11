@@ -25,7 +25,7 @@ const others = computed(() => articles
 <template>
   <UContainer
     v-if="article"
-    class="pb-28 lg:pb-16"
+    class="pb-16"
   >
     <UPage>
       <UPageHeader

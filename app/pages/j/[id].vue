@@ -17,7 +17,7 @@ const details = computed(() => demoOrder.details.map(d => ({
 </script>
 
 <template>
-  <UContainer class="pb-28 lg:pb-16">
+  <UContainer class="pb-16">
     <UPageHero
       :headline="t('share.headline')"
       :title="l(demoOrder.deceased.name)"

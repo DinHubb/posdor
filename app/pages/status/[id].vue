@@ -31,7 +31,7 @@ async function copyLink() {
 </script>
 
 <template>
-  <UContainer class="pb-28 lg:pb-16">
+  <UContainer class="pb-16">
     <UPage>
       <UPageHeader
         :headline="t('status.headline', { id })"

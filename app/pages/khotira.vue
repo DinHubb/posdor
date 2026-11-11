@@ -11,7 +11,7 @@ const searched = ref(false)
 </script>
 
 <template>
-  <UContainer class="max-w-3xl pb-28 lg:pb-16">
+  <UContainer class="max-w-3xl pb-16">
     <UPageHero
       :headline="t('khotira.headline')"
       :title="t('khotira.title')"
