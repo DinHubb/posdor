@@ -68,7 +68,7 @@ async function copyLink() {
       </UPageBody>
 
       <template #right>
-        <UPageAside>
+        <UPageAside :ui="{ root: 'lg:pe-0 overflow-visible' }">
           <UPageCard
             :title="t('status.rahnamo')"
             variant="subtle"

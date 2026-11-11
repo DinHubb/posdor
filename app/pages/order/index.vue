@@ -494,7 +494,7 @@ function back() {
       </UPageBody>
 
       <template #right>
-        <UPageAside>
+        <UPageAside :ui="{ root: 'lg:pe-0 overflow-visible' }">
           <UCard :ui="{ body: 'space-y-4' }">
             <template #header>
               <UUser
