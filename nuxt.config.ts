@@ -16,6 +16,14 @@ export default defineNuxtConfig({
     prose: true
   },
 
+  runtimeConfig: {
+    public: {
+      // Ключ 2ГИС (MapGL + Places API). Публичный: всё равно виден в браузере,
+      // защищается ограничением по домену в кабинете 2ГИС. Можно переопределить NUXT_PUBLIC_DGIS_KEY
+      dgisKey: 'a91ea902-12ef-430d-bed1-8f19c8251d75'
+    }
+  },
+
   routeRules: {
     '/': { prerender: true },
     '/tg': { prerender: true },

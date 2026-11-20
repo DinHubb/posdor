@@ -6,6 +6,7 @@ export interface OrderForm {
   age: 'adult' | 'child'
   location: 'home' | 'hospital' | 'morgue'
   address: string
+  point?: { lat: number, lon: number }
   floor: number
   lift: boolean
   deathDay: 'today' | 'yesterday'
@@ -46,6 +47,7 @@ export function useOrder() {
     age: 'adult',
     location: 'home',
     address: '',
+    point: undefined,
     floor: 1,
     lift: true,
     deathDay: 'today',

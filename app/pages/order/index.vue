@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { cemeteries, contacts, districts, extras, mosques, packages } from '~/data/site'
 import type { JanazaSlot } from '~/composables/useOrder'
+import type { GeoAddress } from '~/composables/use2gis'
 
 const { t } = useI18n()
 const localePath = useLocalePath()
@@ -108,6 +109,11 @@ const extraItems = computed(() => extras.map((e) => {
     disabled: included
   }
 }))
+
+// Неточный адрес (только район) не затирает то, что человек уже ввёл
+function onMapPick({ address }: { address: GeoAddress | null }) {
+  if (address && (address.precise || !form.value.address.trim())) form.value.address = address.text
+}
 
 const recording = ref(false)
 const voiceNote = ref<string | null>(null)
@@ -221,12 +227,10 @@ function back() {
                   size="lg"
                   class="w-full"
                 />
-                <UButton
-                  icon="i-lucide-map"
+                <MapPicker
+                  v-model:point="form.point"
                   :label="t('order.map')"
-                  color="neutral"
-                  variant="subtle"
-                  @click="toast.add({ title: t('order.mapToastTitle'), description: t('order.mapToastText') })"
+                  @pick="onMapPick"
                 />
               </UFieldGroup>
             </UFormField>
