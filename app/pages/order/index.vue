@@ -2,6 +2,8 @@
 import { cemeteries, contacts, districts, extras, mosques, packages } from '~/data/site'
 import type { JanazaSlot } from '~/composables/useOrder'
 import type { GeoAddress } from '~/composables/use2gis'
+import { parseTime } from '@internationalized/date'
+import type { Time } from '@internationalized/date'
 
 const { t } = useI18n()
 const localePath = useLocalePath()
@@ -111,6 +113,14 @@ const extraItems = computed(() => extras.map((e) => {
 }))
 
 const mapPicker = useTemplateRef('map-picker')
+
+// В заявке время хранится строкой «ЧЧ:ММ», UInputTime работает с объектом Time
+const deathTime = computed({
+  get: () => form.value.deathTime ? parseTime(form.value.deathTime) : undefined,
+  set: (v: Time | undefined) => {
+    form.value.deathTime = v ? v.toString().slice(0, 5) : ''
+  }
+})
 
 // Неточный адрес (только район) не затирает то, что человек уже ввёл
 function onMapPick({ address }: { address: GeoAddress | null }) {
@@ -284,9 +294,9 @@ function back() {
                 />
               </UFormField>
               <UFormField :label="t('order.deathTime')">
-                <UInput
-                  v-model="form.deathTime"
-                  type="time"
+                <UInputTime
+                  v-model="deathTime"
+                  :hour-cycle="24"
                   icon="i-lucide-clock"
                   size="xl"
                 />
