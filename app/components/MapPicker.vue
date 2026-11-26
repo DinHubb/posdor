@@ -142,23 +142,15 @@ watch(open, (v) => {
 })
 
 onBeforeUnmount(destroyMap)
+
+defineExpose({ locateDirect, busy: computed(() => locating.value || resolving.value) })
 </script>
 
 <template>
   <UButton
-    icon="i-lucide-locate-fixed"
-    color="neutral"
-    variant="subtle"
-    :loading="locating || resolving"
-    :aria-label="t('order.mapLocate')"
-    :title="t('order.mapLocate')"
-    @click="locateDirect"
-  />
-  <UButton
     icon="i-lucide-map"
     :label="props.label"
-    color="neutral"
-    variant="subtle"
+    color="primary"
     @click="onButton"
   />
 

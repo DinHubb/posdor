@@ -110,6 +110,8 @@ const extraItems = computed(() => extras.map((e) => {
   }
 }))
 
+const mapPicker = useTemplateRef('map-picker')
+
 // Неточный адрес (только район) не затирает то, что человек уже ввёл
 function onMapPick({ address }: { address: GeoAddress | null }) {
   if (address && (address.precise || !form.value.address.trim())) form.value.address = address.text
@@ -226,8 +228,23 @@ function back() {
                   icon="i-lucide-map-pin"
                   size="lg"
                   class="w-full"
-                />
+                  :ui="{ trailing: 'pe-1' }"
+                >
+                  <template #trailing>
+                    <UButton
+                      icon="i-lucide-locate-fixed"
+                      color="neutral"
+                      variant="link"
+                      size="sm"
+                      :loading="mapPicker?.busy"
+                      :aria-label="t('order.mapLocate')"
+                      :title="t('order.mapLocate')"
+                      @click="mapPicker?.locateDirect()"
+                    />
+                  </template>
+                </UInput>
                 <MapPicker
+                  ref="map-picker"
                   v-model:point="form.point"
                   :label="t('order.map')"
                   @pick="onMapPick"
