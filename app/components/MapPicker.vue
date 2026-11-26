@@ -151,6 +151,7 @@ defineExpose({ locateDirect, busy: computed(() => locating.value || resolving.va
     icon="i-lucide-map"
     :label="props.label"
     color="primary"
+    size="xl"
     @click="onButton"
   />
 
@@ -238,12 +239,14 @@ defineExpose({ locateDirect, busy: computed(() => locating.value || resolving.va
       <div class="flex w-full justify-end gap-2">
         <UButton
           :label="t('order.mapCancel')"
+          size="xl"
           color="neutral"
           variant="ghost"
           @click="open = false"
         />
         <UButton
           :label="t('order.mapConfirm')"
+          size="xl"
           icon="i-lucide-check"
           :disabled="!picked || resolving"
           @click="confirm"

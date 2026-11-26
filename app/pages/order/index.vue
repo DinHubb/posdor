@@ -176,7 +176,7 @@ function back() {
         <UStepper
           v-model="step"
           :items="steps"
-          size="sm"
+          size="md"
           class="hidden md:flex"
         />
         <UProgress
@@ -226,7 +226,7 @@ function back() {
                   v-model="form.address"
                   :placeholder="t('order.addressPlaceholder')"
                   icon="i-lucide-map-pin"
-                  size="lg"
+                  size="xl"
                   class="w-full"
                   :ui="{ trailing: 'pe-1' }"
                 >
@@ -257,7 +257,7 @@ function back() {
                   v-model="form.floor"
                   :min="1"
                   :max="30"
-                  size="lg"
+                  size="xl"
                 />
               </UFormField>
               <UFormField
@@ -288,7 +288,7 @@ function back() {
                   v-model="form.deathTime"
                   type="time"
                   icon="i-lucide-clock"
-                  size="lg"
+                  size="xl"
                 />
               </UFormField>
             </UPageGrid>
@@ -320,7 +320,7 @@ function back() {
               <USelect
                 v-model="form.district"
                 :items="districtItems"
-                size="lg"
+                size="xl"
                 class="w-full"
               />
             </UFormField>
@@ -336,7 +336,7 @@ function back() {
                 v-model="form.cemetery"
                 :items="cemeteryItems"
                 :placeholder="t('order.cemeteryPlaceholder')"
-                size="lg"
+                size="xl"
                 class="w-full"
               />
             </UFormField>
@@ -432,7 +432,7 @@ function back() {
                 :label="recording ? t('order.stopVoice') : t('order.recordVoice')"
                 :color="recording ? 'error' : 'neutral'"
                 variant="subtle"
-                size="lg"
+                size="xl"
                 @click="toggleRecording"
               />
             </UFieldGroup>
@@ -454,7 +454,7 @@ function back() {
               <UInput
                 v-model="form.contactName"
                 :placeholder="t('order.namePlaceholder')"
-                size="lg"
+                size="xl"
                 class="w-full"
               />
             </UFormField>
@@ -468,7 +468,7 @@ function back() {
                 type="tel"
                 placeholder="+992 ..."
                 icon="i-lucide-phone"
-                size="lg"
+                size="xl"
                 class="w-full"
               />
             </UFormField>
@@ -477,7 +477,7 @@ function back() {
                 v-model="form.contactRelation"
                 :items="relationItems"
                 :placeholder="t('order.relationPlaceholder')"
-                size="lg"
+                size="xl"
                 class="w-full"
               />
             </UFormField>

@@ -28,7 +28,7 @@ const searched = ref(false)
             v-model="name"
             :placeholder="t('khotira.namePlaceholder')"
             icon="i-lucide-search"
-            size="lg"
+            size="xl"
             class="w-full"
           />
         </UFormField>
@@ -39,14 +39,14 @@ const searched = ref(false)
             :max="2026"
             :format-options="{ useGrouping: false }"
             placeholder="2020"
-            size="lg"
+            size="xl"
           />
         </UFormField>
       </UPageGrid>
       <UButton
         :label="t('khotira.search')"
         icon="i-lucide-search"
-        size="lg"
+        size="xl"
         :disabled="!name"
         @click="searched = true"
       />
