@@ -166,10 +166,10 @@ onBeforeUnmount(destroyMap)
     v-model:open="open"
     :title="t('order.mapTitle')"
     :description="t('order.mapDescription')"
-    :ui="{ content: 'sm:max-w-2xl' }"
+    :ui="{ content: 'h-full sm:max-w-5xl', body: 'flex min-h-0 flex-col' }"
   >
     <template #body>
-      <div class="relative h-[60vh] max-h-[480px] overflow-hidden rounded-lg bg-elevated">
+      <div class="relative min-h-0 flex-1 overflow-hidden rounded-lg bg-elevated">
         <div
           ref="container"
           class="size-full"
